@@ -22,6 +22,7 @@ h1 {
   color: #fff;
 }
 
+/* Dark mode styles */
 .app.dark-mode {
   background: linear-gradient(to right, #000000, #434343);
   color: #f1f1f1;
@@ -76,6 +77,8 @@ h1 {
   margin: 0 1rem;
 }
 
+
+/* Style for the search section */
 .search {
   margin: 1rem 0;
   display: flex;
@@ -108,6 +111,8 @@ h1 {
   background-color: #1BFFFF;
 }
 
+
+/* Style for the toggle section*/
 .toggle {
   text-align: center;
   margin-top: 1rem;
@@ -126,6 +131,7 @@ h1 {
   transition: background-color 0.3s;
 }
 
+/* Hover effect for the toggle button */
 .toggle button:hover {
   background-color: #1BFFFF;
 }

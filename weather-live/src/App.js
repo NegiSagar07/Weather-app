@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 function App() {
+  // State variables to store weather data, user input, location, and dark mode status
   const [weatherData, setWeatherData] = useState(null);
   const [location, setLocation] = useState('Delhi');
   const [query, setQuery] = useState('');
   const [darkMode, setDarkMode] = useState(false);
 
+  // OpenWeather API key and URL
   const apiKey = 'ecc4f31f4c9bc45a5b421e686d1d3f14';
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
 
+  // Fetch weather data when the location changes
   useEffect(() => {
     fetch(url)
       .then(response => response.json())
@@ -23,14 +26,17 @@ function App() {
       .catch(error => console.error('Error fetching the weather data:', error));
   }, [url]);
 
+  // Handle search button click
   const handleSearch = () => {
     setLocation(query);
   };
 
+  // Toggle between dark mode and light mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
+  // Get the current time in the format HH:MM:SS
   const getCurrentTime = () => {
     const date = new Date();
     return date.toLocaleTimeString('en-US', {
@@ -40,6 +46,7 @@ function App() {
     });
   };
 
+  // Display loading message until weather data is fetched
   if (!weatherData) return <div>Loading...</div>;
 
   return (
